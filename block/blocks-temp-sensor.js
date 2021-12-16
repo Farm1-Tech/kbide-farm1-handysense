@@ -75,4 +75,16 @@ module.exports = function (Blockly) {
             this.setHelpUrl("");
         }
     };
+
+    Blockly.Blocks['jxbs_3001_tr_temp'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("thermometer.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("JXBS-3001-TR (RS485 | ID: 1)");
+            this.setOutput(true, "temp_sensor");
+            this.setColour(240);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
 };

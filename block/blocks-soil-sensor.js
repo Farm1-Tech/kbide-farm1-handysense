@@ -15,4 +15,16 @@ module.exports = function (Blockly) {
             this.setHelpUrl("");
         }
     };
+
+    Blockly.Blocks['jxbs_3001_tr_soil'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("soil.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("JXBS-3001-TR (RS485 | ID: 1)");
+            this.setOutput(true, "soil_sensor");
+            this.setColour(180);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
 };

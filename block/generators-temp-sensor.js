@@ -36,4 +36,10 @@ module.exports = function (Blockly) {
 
         return [code, Blockly.JavaScript.ORDER_NONE];
     };
+
+    Blockly.JavaScript['jxbs_3001_tr_temp'] = function (block) {
+        var code = '#EXTINC#include <HandySenseJXBS_3001_TR.h>#END' + 'handySenseJXBS3001TRTempRead';
+
+        return [code, Blockly.JavaScript.ORDER_NONE];
+    };
 };

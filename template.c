@@ -14,7 +14,4 @@ void setup() {
 }
 void loop() {
   HandySenseLoop();
-
-  ${LOOP_CODE}
-  ${LOOP_EXT_CODE}
 }
