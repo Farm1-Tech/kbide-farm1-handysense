@@ -6,7 +6,7 @@ module.exports = {
     author : 'ArtronShop',
     website : 'https://farm1.tech',
     email : 'contact@atronshop.co.th',
-    git : 'https://github.com/ArtronShop/kbide-farm1-handysense/',
+    git : 'https://github.com/Farm1-Tech/kbide-farm1-handysense/',
     image : '/static/display.jpg',
     version : '1.0.0'
 };
