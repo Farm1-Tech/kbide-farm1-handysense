@@ -12,4 +12,10 @@ module.exports = function (Blockly) {
 
         return [code, Blockly.JavaScript.ORDER_NONE];
     };
+
+    Blockly.JavaScript['rs485_soil_soil'] = function (block) {
+        var code = '#EXTINC#include <HandySenseRS485_SOIL.h>#END' + 'handySenseRS485_SOILSoilRead';
+
+        return [code, Blockly.JavaScript.ORDER_NONE];
+    };
 };

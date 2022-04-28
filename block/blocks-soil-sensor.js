@@ -27,4 +27,16 @@ module.exports = function (Blockly) {
             this.setHelpUrl("");
         }
     };
+
+    Blockly.Blocks['rs485_soil_soil'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("soil.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("RS485 Soil (RS485 | ID: 1)");
+            this.setOutput(true, "soil_sensor");
+            this.setColour(180);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
 };

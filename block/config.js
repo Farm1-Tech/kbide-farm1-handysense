@@ -85,6 +85,7 @@ module.exports = {
             blocks: [
                 "capacitive_soil_moisture_sensor_v1.2_soil",
                 "jxbs_3001_tr_soil",
+                "rs485_soil_soil"
             ]
         },
         {

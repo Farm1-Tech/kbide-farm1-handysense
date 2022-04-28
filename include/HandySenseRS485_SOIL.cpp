@@ -1,4 +1,4 @@
-#include "HandySenseXY_MD02.h"
+#include "HandySenseRS485_SOIL.h"
 
 #define DE_RE_PIN 2
 #define MODE_SEND HIGH
@@ -24,15 +24,15 @@ uint16_t CRC16(uint8_t *buf, int len) {
 	return crc;
 }
 
-bool readJXBS_3001_TR(uint8_t start_addr, float* value) {
+bool readRS485_SOIL(uint8_t start_addr, float* value) {
 	pinMode(RS485_DIR, OUTPUT);
 	digitalWrite(RS485_DIR, MODE_RECV);
 
-	Serial2.begin(9600, SERIAL_8N1, RS485_RX, RS485_TX); // Rx, Tx
+	Serial2.begin(4800, SERIAL_8N1, RS485_RX, RS485_TX); // Rx, Tx
 	Serial2.setTimeout(200);
 
 	uint8_t buff[] = {
-		0x03, // Devices Address
+		0x01, // Devices Address
 		0x03, // Function code
 		0x00, // Start Address HIGH
 		start_addr, // 0x01, // Start Address LOW
@@ -51,7 +51,7 @@ bool readJXBS_3001_TR(uint8_t start_addr, float* value) {
 	Serial2.flush(); // wait MODE_SEND completed
 	digitalWrite(RS485_DIR, MODE_RECV);
 
-	if (Serial2.find("\x03\x03")) {
+	if (Serial2.find("\x01\x03")) {
 		while(!Serial2.available()) delay(1);
 
 		uint8_t n = Serial2.read();
@@ -61,7 +61,9 @@ bool readJXBS_3001_TR(uint8_t start_addr, float* value) {
 			return -20;
 		}
 
-		*value = ((uint16_t)(Serial2.read() << 8) | Serial2.read()) / 10.0;
+		*value = ((uint16_t)(Serial2.read() << 8) | Serial2.read()) * 1.0f;
+		// Serial.printf("Soil : %.2f\n", *value);
+		*value = (float)(min(max(map(*value, 70, 500, 0, 100), 0L), 100L));
 
 		return 0;
 	}
@@ -71,10 +73,6 @@ bool readJXBS_3001_TR(uint8_t start_addr, float* value) {
 }
 
 // Real Program part
-int handySenseJXBS3001TRTempRead(float *value) {
-	return readJXBS_3001_TR(0x03, value);
-}
-
-int handySenseJXBS3001TRSoilRead(float *value) {
-	return readJXBS_3001_TR(0x02, value);
+int handySenseRS485_SOILSoilRead(float *value) {
+	return readRS485_SOIL(0x00, value);
 }
