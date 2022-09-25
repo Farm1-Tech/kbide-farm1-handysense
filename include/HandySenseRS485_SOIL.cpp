@@ -55,15 +55,13 @@ bool readRS485_SOIL(uint8_t start_addr, float* value) {
 		while(!Serial2.available()) delay(1);
 
 		uint8_t n = Serial2.read();
-		// if (n != 4) {
 		if (n != 2) {
 			Serial.printf("Error data size : %d\n", n);
 			return -20;
 		}
 
-		*value = ((uint16_t)(Serial2.read() << 8) | Serial2.read()) * 1.0f;
-		// Serial.printf("Soil : %.2f\n", *value);
-		*value = (float)(min(max(map(*value, 70, 500, 0, 100), 0L), 100L));
+		*value = ((uint16_t)(Serial2.read() << 8) | Serial2.read()) / 10.0;
+		Serial.printf("Soil : %.2f\n", *value);
 
 		return 0;
 	}
