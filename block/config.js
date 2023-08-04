@@ -96,6 +96,7 @@ module.exports = {
             icon: dirIcon("sun.svg"),
             blocks: [
                 "bh1750_light",
+                "ats_lux_light",
             ]
         },
     ]

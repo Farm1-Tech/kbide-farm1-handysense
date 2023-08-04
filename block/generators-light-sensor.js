@@ -6,4 +6,10 @@ module.exports = function (Blockly) {
 
         return [code, Blockly.JavaScript.ORDER_NONE];
     };
+
+    Blockly.JavaScript['ats_lux_light'] = function (block) {
+        var code = '#EXTINC#include <HandySenseATS-LUX.h>#END' + 'handySenseRS485_ATS_LUX_LightRead';
+
+        return [code, Blockly.JavaScript.ORDER_NONE];
+    };
 };

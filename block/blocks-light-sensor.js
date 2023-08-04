@@ -15,4 +15,16 @@ module.exports = function (Blockly) {
             this.setHelpUrl("");
         }
     };
+
+    Blockly.Blocks['ats_lux_light'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("sun.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("ATS-LUX (RS485 | ID: 1)");
+            this.setOutput(true, "light_sensor");
+            this.setColour(0);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
 };
