@@ -52,6 +52,18 @@ module.exports = function (Blockly) {
         }
     };
 
+    Blockly.Blocks['ats_co2_humi'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("humidity.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("ATS-CO2 (RS485 | ID: 1)");
+            this.setOutput(true, "humi_sensor");
+            this.setColour(315);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
     Blockly.Blocks['xy_md02_humi'] = {
         init: function () {
             this.appendDummyInput()

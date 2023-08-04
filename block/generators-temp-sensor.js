@@ -25,6 +25,12 @@ module.exports = function (Blockly) {
         return [code, Blockly.JavaScript.ORDER_NONE];
     };
 
+    Blockly.JavaScript['ats_co2_temp'] = function (block) {
+        var code = '#EXTINC#include <HandySenseXY_MD02.h>#END' + 'handySenseXYMD02TempRead';
+
+        return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+
     Blockly.JavaScript['xy_md02_temp'] = function (block) {
         var code = '#EXTINC#include <HandySenseXY_MD02.h>#END' + 'handySenseXYMD02TempRead';
 
