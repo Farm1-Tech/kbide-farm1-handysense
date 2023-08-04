@@ -28,6 +28,18 @@ module.exports = function (Blockly) {
         }
     };
 
+    Blockly.Blocks['sht45_humi'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("humidity.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("SHT45 (I2C)");
+            this.setOutput(true, "humi_sensor");
+            this.setColour(315);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
     Blockly.Blocks['xy_md02_humi'] = {
         init: function () {
             this.appendDummyInput()

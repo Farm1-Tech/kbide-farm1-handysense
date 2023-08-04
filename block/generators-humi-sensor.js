@@ -13,6 +13,12 @@ module.exports = function (Blockly) {
         return [code, Blockly.JavaScript.ORDER_NONE];
     };
 
+    Blockly.JavaScript['sht45_humi'] = function (block) {
+        var code = '#EXTINC#include <HandySenseSHT45.h>#END' + 'handySenseSHT45HumiRead';
+
+        return [code, Blockly.JavaScript.ORDER_NONE];
+    };
+
     Blockly.JavaScript['xy_md02_humi'] = function (block) {
         var code = '#EXTINC#include <HandySenseXY_MD02.h>#END' + 'handySenseXYMD02HumiRead';
 

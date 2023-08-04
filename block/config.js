@@ -59,6 +59,7 @@ module.exports = {
             blocks: [
                 "sht20_temp",
                 "sht30_temp",
+                "sht45_temp",
                 "xy_md02_temp",
                 "am2301_temp",
                 "dht22_temp",
@@ -73,6 +74,7 @@ module.exports = {
             blocks: [
                 "sht20_humi",
                 "sht30_humi",
+                "sht45_humi",
                 "xy_md02_humi",
                 "am2301_humi",
                 "dht22_humi",

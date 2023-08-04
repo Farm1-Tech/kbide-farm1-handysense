@@ -28,6 +28,18 @@ module.exports = function (Blockly) {
         }
     };
 
+    Blockly.Blocks['sht45_temp'] = {
+        init: function () {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage(dirIcon("thermometer.svg"), 15, 15, { alt: "*", flipRtl: "FALSE" }))
+                .appendField("SHT45 (I2C)");
+            this.setOutput(true, "temp_sensor");
+            this.setColour(240);
+            this.setTooltip("");
+            this.setHelpUrl("");
+        }
+    };
+
     Blockly.Blocks['xy_md02_temp'] = {
         init: function () {
             this.appendDummyInput()
